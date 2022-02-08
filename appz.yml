@@ -1,7 +1,7 @@
     app:
         name: MySQL
         code: mysql
-        notify: svengathattil@ecloudcontrol.com
+        notify: appzdev@cloudbourne.co
 
     build:
         version: 5.7
@@ -11,13 +11,28 @@
         image_template: mysql-5.7
 
     deploy:
-        context: sidharth-v/DEV
+        context: alpha/DEV
+        type: statefulset
         replicas: 1
         ingress: none
         port:
         - 3306
 
+    volumes:
+      - claim: mysql-data
+        mount: /var/lib/mysql
+        name: data
+        size: 5Gi
+      - claim: mysql-backup
+        mount: /appz/backup
+        name: backup
+        size: 5Gi
+
     properties:
         MYSQL_ROOT_PASSWORD:
           vault: MYSQL_ROOT_PASSWORD_KEY
-        revision : 16
+        MYSQL_SPRINGBOOTWEB_PASSWORD:
+          vault: MYSQL_SPRINGBOOTWEB_PASSWORD
+        MYSQL_WORDPRESS_PASSWORD:
+          vault: MYSQL_WORDPRESS_PASSWORD
+        revision : 24
