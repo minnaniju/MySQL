@@ -20,4 +20,4 @@ deploy:
 properties:
   MYSQL_ROOT_PASSWORD:
     vault: MYSQL_ROOT_PASSWORD_KEY
-  revision : 8
+  revision : 9
