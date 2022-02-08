@@ -1,23 +1,23 @@
 app:
-    name: MySQL
-    code: mysql
-    notify: svengathattil@ecloudcontrol.com
+  name: MySQL
+  code: mysql
+  notify: svengathattil@ecloudcontrol.com
 
 build:
-    version: 5.7
-    env: DEV
-    build_file: none
-    output_files: output/*.zip
-    image_template: mysql-5.7
+  version: 5.7
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: mysql-5.7
 
 deploy:
-    context: sidharth-v/DEV
-    replicas: 1
-    ingress: none
-    port:
-    - 3306
+  context: sidharth-v/DEV
+  replicas: 1
+  ingress: none
+  port:
+  - 3306
 
 properties:
-    MYSQL_ROOT_PASSWORD:
-      vault: MYSQL_ROOT_PASSWORD_KEY
-    revision : 8
+  MYSQL_ROOT_PASSWORD:
+    vault: MYSQL_ROOT_PASSWORD_KEY
+  revision : 8
