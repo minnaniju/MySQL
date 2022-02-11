@@ -17,6 +17,7 @@
         ingress: none
         port:
         - 3306
+        - 9104
 
     volumes:
       - claim: mysql-data
