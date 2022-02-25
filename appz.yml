@@ -1,6 +1,6 @@
     app:
-        name: MySQL
-        code: mysql
+        name: MySQLa
+        code: mysqla
         notify: svengathattil@ecloudcontrol.com
 
     build:
@@ -21,7 +21,7 @@
 
     volumes:
       - claim: mysql-data
-        mount: /var/lib/mysql
+        mount: /var/lib/mysqla
         name: data
         size: 5Gi
       - claim: mysql-backup
