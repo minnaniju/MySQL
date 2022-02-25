@@ -11,7 +11,7 @@
         image_template: mysql-5.7
 
     deploy:
-        context: sidharth-v/DEV
+        context: minnaniju/DEV
         type: statefulset
         replicas: 1
         ingress: none
